@@ -1,0 +1,13 @@
+<h3>Revision history for set "{{data.title}}"</h3>
+<div class="history">
+  {{#each data.revisions}}
+  {{debug this}}
+    <hr>
+    <div class="revision">
+      <em>{{this.user}} at {{this.created}}</em>
+      <p>{{this.comment}}</p>
+    </div>
+  {{/each}}
+  
+  <a class="close" data-sid="{{data.id}}" href="#">Hide revision history</a>
+</div>
