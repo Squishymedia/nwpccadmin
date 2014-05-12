@@ -1,6 +1,10 @@
 {{!< main}}
 <div class="main shadow generic">
   
+  <div id="fyi">
+  
+  </div>
+  
   <div class="row">
     
     <div id="sets">
@@ -27,41 +31,11 @@
           <div id="revisions{{this.id}}">
             <a class="load" data-sid="{{this.id}}" href="#">View history</a>
           </div>
-
+          <div id="update{{this.id}}">
+            <a class="postnew" data-sid="{{this.id}}" href="#">Upload a new revision</a>
+          </div>
         </div>
       {{/each}}
-    </div>
-      
-    <div id="update">
-    
-      <h2>Upload a new data sheet</h2>
-    
-      <form enctype="multipart/form-data" action="http://sitka-stg.sqm.io/sets/1/new_xls" method="post">
-      
-      <table>
-      <tr>
-        <td>Select the set to upload to:</td>
-        <td>
-          <select>
-            {{#each sets}}
-              <option value="{{this.id}}">{{this.title}}</option>
-            {{/each}}
-          </select>
-        </td>
-      </tr>
-      <tr><td>Select a file:</td><td><input type="file" name="file" /></td></tr>
-      <tr><td>Sheet # That Contains the Data:</td><td><input type="text" name="sheet" value="5" /> (numeric)</td></tr>
-      <tr><td>Header Row # (0 for no header):</td><td><input type="text" name="header_row" value="7" /> (numeric)</td></tr>
-      <tr><td>Revision comment:</td><td><input type="text" name="revision_comment" /></td></tr>
-      <tr><td>Should this become the new canonical version?</td><td><input type="checkbox" name="make_canonical" value="True"></td></tr>
-      <tr><td colspan="2"><em>Be patient with the upload - it may take around 20 seconds or so to import all of the data.</em></td></tr>
-      <tr><td colspan="2"><input type="submit" value="Upload" /></td></tr>
-      </table>
-      </form>
-      
-      <p id="newXLSData">
-      </p>
-    
     </div>
       
   </div><!-- /row -->

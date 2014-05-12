@@ -2,7 +2,6 @@
 
 $('body').on('click', "a.load", function(event){
   var sid = $(this).attr("data-sid");
-  console.log('Loading revisions for set #' + sid);
   
   $.get('/history/' + sid, function(response){
     
@@ -11,11 +10,44 @@ $('body').on('click', "a.load", function(event){
   });
 });
 
-$('body').on('click', "a.close", function(event){
-  console.log('hi');
+$('body').on('click', "a.close-history", function(event){
+  
   var sid = $(this).attr("data-sid");
   
   var link = $("<a>").attr("class","load").attr("data-sid",""+sid).attr("href","#").html("View history");
-  console.log(link);
+  
   $("#revisions" + sid).html(link);
 });
+
+$('body').on('click', "a.postnew", function(event){
+  
+  var sid = $(this).attr("data-sid");
+  
+  $.get('/postnew/' + sid, function(response){
+    
+    $("#update" + sid).html(response);
+    
+  });
+});
+
+$('body').on('click', "a.close-upload", function(event){
+  var sid = $(this).attr("data-sid");
+  
+  var link = $("<a>").attr("class","postnew").attr("data-sid",""+sid).attr("href","#").html("Upload a new revision");
+  
+  $("#update" + sid).html(link);
+  
+});
+
+$('body').on('click', "a.approve", function(event){
+  var sid = $(this).attr("data-sid");
+  var vid = $(this).parent().attr("data-vid");
+  
+  $.get('/sets/' + sid + '/' + vid + '/approve', function(response){
+    
+    $("#fyi" + sid).html(response);
+    $(".revision.current").removeClass("current");
+    $("#rev" + vid).addClass("current");
+    
+  });
+})

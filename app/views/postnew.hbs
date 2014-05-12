@@ -1,0 +1,14 @@
+<form enctype="multipart/form-data" action="http://sitka-stg.sqm.io/sets/{{setid}}/new_xls" method="post">
+  
+  <legend>This will upload a new sheet to data set <strong>{{title}}</strong>.</legend>
+  
+  <p>Select a file: <input type="file" name="file" /></p>
+  <p>Sheet Name That Contains the Data: <input type="text" name="sheet" value="Projects" /></p>
+  <p>Header Row # (0 for no header): <input type="text" name="header_row" value="7" /> (numeric)</p>
+  <p>Revision comment: <input type="text" name="revision_comment" /></p>
+  <p>Should this become the new canonical version? <input type="checkbox" name="make_canonical" value="True"></p>
+  <p><em>Be patient with the upload - it may take around 20 seconds or so to import all of the data.</em></p>
+  <p><input type="submit" value="Upload" /> or <a href="#" class="close-upload" data-sid={{setid}}>cancel</a></p>
+
+</form>
+      

@@ -3,7 +3,7 @@ var $ = require('jquery'),
     fs = require('fs'),
     async = require('async'),
     request = require('request'),
-    expressValidator = require('express-validator');
+    moment = require('moment');
 
 function readJSONFile(filename, callback) {
   console.log('Attempting to read "' + filename + '"');
@@ -22,35 +22,26 @@ function readJSONFile(filename, callback) {
 
 exports.show = function(req, res){
 
-    var url = global.conf.dataService + '/sets' + global.conf.dataTail;
-    
-    try{request(url, function(error, response, body){
-
-    console.log(body);
-    
-      var sets = JSON.parse(body);
-    
-    console.log(sets);
-    
-      res.render('index', {'sets': sets, 'global': {'service': global.conf.dataService}});
-
-    });
-    } catch (e) {
-        if(global.conf.debug){console.log(e);}
-        res.render('error', {'errormsg':e});
-    }
-    
-}
-
-exports.approve = function(req, res){
+  var url = global.conf.dataService + '/sets' + global.conf.dataTail;
   
+  try{request(url, function(error, response, body){
+
+  console.log(body);
+  
+  var sets = JSON.parse(body);
+  
+  console.log(sets);
+  
+    res.render('index', {'sets': sets, 'global': {'service': global.conf.dataService}});
+
+  });
+  } catch (e) {
+      if(global.conf.debug){console.log(e);}
+      res.render('error', {'errormsg':e});
+  }
   
 }
 
-exports.send = function(req, res){
-  console.log(req);
-  
-}
 
 exports.getData = function(req, urlTail, callback) {
   var url = global.conf.dataService + '/' + urlTail;

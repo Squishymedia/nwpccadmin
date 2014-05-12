@@ -9,10 +9,10 @@ module.exports = function (app) {
   // Wiring for list of revisions AJAX
   app.get('/history/:sid', ajax.history);
 
+  // Wiring to show post form
+  app.get('/postnew/:sid', ajax.postnew);
   
   // Wiring for approve as canonical
-  app.get('/sets/:sid/approve', home.approve);
+  app.get('/sets/:sid/:vid/approve', ajax.approve);
   
-  // Wiring for XLS post
-  //app.post('/', home.send);
 };
