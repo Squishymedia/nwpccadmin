@@ -5,6 +5,17 @@ body{
 
 }
 
+.affix-top{
+	position: fixed;
+}
+.affix-bottom{
+	position: absolute;
+}
+
+.footer{
+	height: 100px;
+}
+
 // NPC custom CSS
 .revision{
 	padding: 10px;
@@ -21,19 +32,60 @@ body{
 	}
 }
 
+.arrow-left {
+	width: 0; 
+	height: 0; 
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent; 
 
+	border-right:10px solid @brand-primary; 
+}
 
 
 #sets .set{
 	margin-top: 20px;
 	padding: 10px 20px;
+	.activewrap{
+			display: none;
+		}
 	h2{
 		margin-top: 0;
 	}
 	&.active{
-		background: @gray-lighter;
-		margin-right: -30px;
-		padding: 10px 20px;
+		// background: @gray-lighter;
+		// margin-right: -30px;
+		// padding: 10px 20px;
+		.headertext{
+			float: left;
+			display: block;
+		}
+		.activewrap{
+			display: block;
+			float: left;
+			line-height: 32px;
+			margin: 6px 10px;
+
+			.arrow-left{
+				display: block;
+				float: left;
+				margin: 0 5px 0 0;
+			}
+			.activetext{
+				line-height: 14px;
+				font-size: 14px;
+				color: #FFF;
+				background: @brand-primary;
+				padding: 3px 8px;
+				border-radius: 13px;
+				display: block;
+				float: left;
+			}
+
+		}
+		h2{
+			color: @brand-primary;
+		}
+
 	}
 }
 

@@ -1,4 +1,3 @@
-/* Translation functionality for OB */
 
 $('body').on('click', "a.load", function(event){
   var sid = $(this).attr("data-sid");
@@ -43,4 +42,13 @@ $('body').on('click', "a.approve", function(event){
     $("#rev" + vid).addClass("current");
     
   });
-})
+});
+
+$('#affixThis').affix({
+    offset: {
+      top: 100
+    , bottom: function () {
+        return (this.bottom = $('.footer').outerHeight(true))
+      }
+    }
+  });
