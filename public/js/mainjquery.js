@@ -17,7 +17,7 @@ $('body').on('click', "a.postnew", function(event){
   
   $.get('/postnew/' + sid, function(response){
     
-    $("#update" + sid).html(response);
+    $("#update").html(response);
     
   });
 });

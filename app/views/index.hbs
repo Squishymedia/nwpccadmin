@@ -34,7 +34,7 @@
             Total revisions: {{this.revisions}}
           </p>
           <!-- Button trigger modal -->
-          <a data-toggle="modal" class="postnew" data-sid="{{this.id}}" href="#" data-target="#modal-{{this.id}}">Upload a new revision</a>
+          <a data-toggle="modal" class="postnew" data-sid="{{this.id}}" href="#" data-target="#modal">Upload a new revision</a>
           <br>
          <!--  <a class="postnew" data-sid="{{this.id}}" href="#">Upload a new revision</a> -->
           <a class="load" data-sid="{{this.id}}" href="#">View history</a>
@@ -52,10 +52,10 @@
 </div>
 {{#each sets}}  
   <!-- Modal -->
-  <div class="modal fade" id="modal-{{this.id}}" tabindex="-1" role="dialog" aria-labelledby="{{this.id}}-title" aria-hidden="true">
+  <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div id="update{{this.id}}"> 
+        <div id="update">
 
       </div> 
       </div>
