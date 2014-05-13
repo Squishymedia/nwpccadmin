@@ -6,6 +6,7 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "async": "0.8.0",
     "express": "3.3.5",
     "moment": "2.6.0",
     "handlebars": "*",
