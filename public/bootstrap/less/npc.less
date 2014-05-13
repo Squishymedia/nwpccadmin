@@ -6,11 +6,41 @@ body{
 }
 
 // NPC custom CSS
-
-.current {
-    background-color: #c0c0c0;
+.revision{
+	padding: 10px;
+	background: #FFF;
+	&:nth-child(odd){
+		background: #eee;
+	}
+	&.current {
+	    background-color: @brand-primary;
+	    color:#fff;
+			a.approve {
+			    display:none;
+			}
+	}
 }
 
-.revision.current a.approve {
-    display:none;
+
+
+
+#sets .set{
+	margin-top: 20px;
+	padding: 10px 20px;
+	h2{
+		margin-top: 0;
+	}
+	&.active{
+		background: @gray-lighter;
+		margin-right: -30px;
+		padding: 10px 20px;
+	}
+}
+
+
+#revisions h3{
+	margin: 20px 0 0;
+	padding: 10px;
+	color: @brand-primary;
+	background: @gray-lighter;
 }

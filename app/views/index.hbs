@@ -6,44 +6,43 @@
   </div>
   
   <div class="row">
-    
-    <div id="revisions">
-    
-    </div>
-    
-    <div id="sets">
-      {{#each sets}}
-        <div class="set" id="set{{this.id}}">
-          <div class="col-sm-7">
-            <h2>{{this.title}}</h2>
-            <p><em>Created: {{this.created}}</em></p>
-            <p class="links approved">
-              Approved data:
-              <a target="_blank" href="{{../global.service}}/sets/{{this.id}}/current?format=xml">XML</a>
-              <a target="_blank" href="{{../global.service}}/sets/{{this.id}}/current?format=json">JSON</a>
-            </p>
-            <p class="links current">
-              Newest data:
-              <a target="_blank" href="{{../global.service}}/sets/{{this.id}}/latest?format=xml">XML</a>
-              <a target="_blank" href="{{../global.service}}/sets/{{this.id}}/latest?format=json">JSON</a>
-            </p>
-            <p>
-              Current revision: {{this.current_revision}}
-            </p>
-            <p>
-              Total revisions: {{this.revisions}}
-            </p>
-             <div id="update{{this.id}}">
-              <a class="postnew" data-sid="{{this.id}}" href="#">Upload a new revision</a>
+        <div id="sets" class="col-sm-7">
+          {{#each sets}}  
+            <div class="set active" id="set{{this.id}}">
+              <h2>{{this.title}}</h2>
+              <p><em>Created: {{this.created}}</em></p>
+              <p class="links approved">
+                Approved data:
+                <a target="_blank" href="{{../global.service}}/sets/{{this.id}}/current?format=xml">XML</a>
+                <a target="_blank" href="{{../global.service}}/sets/{{this.id}}/current?format=json">JSON</a>
+              </p>
+              <p class="links current">
+                Newest data:
+                <a target="_blank" href="{{../global.service}}/sets/{{this.id}}/latest?format=xml">XML</a>
+                <a target="_blank" href="{{../global.service}}/sets/{{this.id}}/latest?format=json">JSON</a>
+              </p>
+              <p>
+                Current revision: {{this.current_revision}}
+              </p>
+              <p>
+                Total revisions: {{this.revisions}}
+              </p>
+               <div id="update{{this.id}}">
+                <a class="postnew" data-sid="{{this.id}}" href="#">Upload a new revision</a>
+              </div>
+              <a class="load" data-sid="{{this.id}}" href="#">View history</a>
             </div>
-          </div>
-          <div class="col-sm-5">
-            <a class="load" data-sid="{{this.id}}" href="#">View history</a>
-         </div>
+          {{/each}}
         </div>
-      {{/each}}
-    </div>
-      
+        {{#each sets}}  
+        <div class="col-sm-5">
+          <div id="revisions">
+          </div>
+        </div>
+       {{/each}}
+
+
+
   </div><!-- /row -->
   
 </div>
