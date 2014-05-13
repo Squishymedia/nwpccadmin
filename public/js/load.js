@@ -5,18 +5,9 @@ $('body').on('click', "a.load", function(event){
   
   $.get('/history/' + sid, function(response){
     
-    $("#revisions" + sid).html(response);
+    $("#revisions").html(response);
   
   });
-});
-
-$('body').on('click', "a.close-history", function(event){
-  
-  var sid = $(this).attr("data-sid");
-  
-  var link = $("<a>").attr("class","load").attr("data-sid",""+sid).attr("href","#").html("View history");
-  
-  $("#revisions" + sid).html(link);
 });
 
 $('body').on('click', "a.postnew", function(event){

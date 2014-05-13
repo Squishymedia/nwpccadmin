@@ -7,6 +7,10 @@
   
   <div class="row">
     
+    <div id="revisions">
+    
+    </div>
+    
     <div id="sets">
       {{#each sets}}
         <div class="set" id="set{{this.id}}">
@@ -34,9 +38,7 @@
             </div>
           </div>
           <div class="col-sm-5">
-            <div id="revisions{{this.id}}">
-              <a class="load" data-sid="{{this.id}}" href="#">View history</a>
-            </div>
+            <a class="load" data-sid="{{this.id}}" href="#">View history</a>
          </div>
         </div>
       {{/each}}
