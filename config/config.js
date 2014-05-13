@@ -6,7 +6,7 @@ module.exports = {
   
   // Port for the app server
   runPort: 3000,
-  dataService: 'http://sitka-stg.sqm.io',
+  dataService: 'http://npc.sqm.io',
   dataTail: '?format=json',
   
   // Handlebars URLification Regex
