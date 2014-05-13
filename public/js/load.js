@@ -6,6 +6,8 @@ $('body').on('click', "a.load", function(event){
   $.get('/history/' + sid, function(response){
     
     $("#revisions").html(response);
+    $(".set.active").removeClass("active");
+    $("#set" + sid).addClass("active");
   
   });
 });
