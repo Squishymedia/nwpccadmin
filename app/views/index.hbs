@@ -3,44 +3,51 @@
   <div id="fyi">
   </div>
   <div class="row" id="setsWrap">
-    <div id="sets" class="col-sm-7">
-      <div id="affixThis">
+    <div id="sets" class="col-sm-7 ">
+     <!--  <div id="affixThis"> -->
       {{#each sets}}  
         <div class="set" id="set{{this.id}}">
-          <h2 class="clearfix">
-            <div class="headertext">{{this.title}}</div>
-              <div class="activewrap">
-                <!-- <span class="arrow-left"></span> -->
-                <span class="activetext">active</span>
-              </div>
-          </h2>
-          <p>
-            <em>Created: {{this.created}}</em>
-          </p>
-          <p class="links approved">
-            Approved data:
-            <a target="_blank" href="{{../global.service}}/sets/{{this.id}}/current?format=xml">XML</a>
-            <a target="_blank" href="{{../global.service}}/sets/{{this.id}}/current?format=json">JSON</a>
-          </p>
-          <p class="links current">
-            Newest data:
-            <a target="_blank" href="{{../global.service}}/sets/{{this.id}}/latest?format=xml">XML</a>
-            <a target="_blank" href="{{../global.service}}/sets/{{this.id}}/latest?format=json">JSON</a>
-          </p>
-          <p>
-            Current revision: {{this.current_revision}}
-          </p>
-          <p>
-            Total revisions: {{this.revisions}}
-          </p>
-          <!-- Button trigger modal -->
-          <a data-toggle="modal" class="postnew" data-sid="{{this.id}}" href="#" data-target="#modal">Upload a new revision</a>
-          <br>
-         <!--  <a class="postnew" data-sid="{{this.id}}" href="#">Upload a new revision</a> -->
-          <a class="load" data-sid="{{this.id}}" href="#">View history</a>
+          <ul class="list-group">
+            <li class="list-group-item list-header">
+              <h2 class="clearfix">
+                <div class="headertext">{{this.title}}</div>
+                  <div class="activewrap">
+                    <!-- <span class="arrow-left"></span> -->
+                    <span class="activetext">active</span>
+                  </div>
+              </h2>
+            </li>
+            <li class="list-group-item">
+                <em>Created: {{this.created}}</em>
+            </li>
+            <li class="list-group-item links approved">
+              <strong>Approved data:</strong>
+              <span class="badge"><a target="_blank" href="{{../global.service}}/sets/{{this.id}}/current?format=xml">XML</a></span>
+              <span class="badge"><a target="_blank" href="{{../global.service}}/sets/{{this.id}}/current?format=json">JSON</a></span>
+            </li>
+            <li class="list-group-item links current">
+             <strong>Newest data:</strong>
+              <span class="badge"><a target="_blank" href="{{../global.service}}/sets/{{this.id}}/latest?format=xml">XML</a></span>
+              <span class="badge"><a target="_blank" href="{{../global.service}}/sets/{{this.id}}/latest?format=json">JSON</a></span>
+            </li>
+            <li class="list-group-item">
+              Current revision <span class="badge">{{this.current_revision}}</span>
+            </li>
+            <li class="list-group-item">
+              Total revisions <span class="badge">{{this.revisions}}</span>
+            </li>
+            <a data-toggle="modal" class="postnew list-group-item" data-sid="{{this.id}}" href="#" data-target="#modal">
+            <!-- Button trigger modal -->
+              Upload a new revision
+            </a>
+             <!--  <a class="postnew" data-sid="{{this.id}}" href="#">Upload a new revision</a> -->
+            <a class="load list-group-item" data-sid="{{this.id}}" href="#">
+              View history
+            </a>
+          </ul>
         </div>
       {{/each}}
-      </div>
+      <!-- </div> -->
     </div>
     <div class="col-sm-5" id="revisionsWrap">
       <div id="revisions">
