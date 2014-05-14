@@ -2,7 +2,8 @@
 @import "bootstrap.less";
 
 .container{
-	margin: 20px auto;
+	margin: 20px 0;
+	width: 100%
 }
 
 .affix-top{
@@ -24,7 +25,7 @@
 		background: #eee;
 	}
 	&.current {
-	    background-color: @brand-primary;
+	    background-color: @brand-success;
 	    color:#fff;
 			a.approve {
 			    display:none;
@@ -63,7 +64,7 @@
 
 a.list-group-item{
 	color: @brand-primary;
-	background:#DEDEE4;
+	background:#E4DEE4;
 	font-weight: bold;
 	&:hover{
 		background: @brand-primary;
@@ -92,14 +93,11 @@ a.list-group-item{
 		// background: @gray-lighter;
 		// margin-right: -30px;
 		// padding: 10px 20px;
-
-		.list-header{
-			background: @gray-lighter;
-		}
 		.headertext{
 			float: left;
 			display: block;
 			width: 70%;
+			color: @brand-success;
 		}
 		.activewrap{
 			display: block;
