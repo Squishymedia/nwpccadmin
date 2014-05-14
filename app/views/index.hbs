@@ -18,7 +18,7 @@
               </h2>
             </li>
             <li class="list-group-item">
-                <em>Created: {{this.created}}</em>
+                <strong>Created: {{this.created}}</strong>
             </li>
             <li class="list-group-item links approved">
               <strong>Approved data:</strong>
@@ -36,8 +36,7 @@
             <li class="list-group-item">
               Total revisions <span class="badge">{{this.revisions}}</span>
             </li>
-            <a data-toggle="modal" class="postnew list-group-item" data-sid="{{this.id}}" href="#" data-target="#modal">
-            <!-- Button trigger modal -->
+            <a data-toggle="modal" class="postnew list-group-item" data-sid="{{this.id}}" href="#" data-target="#modal-{{this.id}}">
               Upload a new revision
             </a>
              <!--  <a class="postnew" data-sid="{{this.id}}" href="#">Upload a new revision</a> -->
@@ -57,12 +56,13 @@
     </div>
   </div><!-- /row -->
 </div>
+
 {{#each sets}}  
   <!-- Modal -->
-  <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal fade" id="modal-{{this.id}}" tabindex="-1" role="dialog" aria-labelledby="{{this.id}}-title" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div id="update">
+        <div id="update{{this.id}}"> 
 
       </div> 
       </div>

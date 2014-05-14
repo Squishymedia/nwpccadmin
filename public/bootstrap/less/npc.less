@@ -31,9 +31,8 @@
 			}
 			strong:after{
 				content: 'active';
-				color: @brand-primary;
+				color: #fff;
 				margin: 0 0 0 10px;
-				background: #FFF;
 				padding: 3px 8px;
 				line-height: 14px;
 				font-size: 14px;
@@ -64,6 +63,8 @@
 
 a.list-group-item{
 	color: @brand-primary;
+	background:#DEDEE4;
+	font-weight: bold;
 	&:hover{
 		background: @brand-primary;
 		color: #fff;
@@ -116,7 +117,7 @@ a.list-group-item{
 				line-height: 14px;
 				font-size: 14px;
 				color: #FFF;
-				background: @brand-primary;
+				background: @brand-success;
 				padding: 3px 8px;
 				border-radius: 13px;
 				display: block;
@@ -133,8 +134,16 @@ a.list-group-item{
 
 
 #revisions {
-	border: 1px solid #DDD;
-	border-radius: 4px;
+	.history{
+		border: 1px solid #DDD;
+		border-radius: 4px;
+		h2{
+			color: @brand-success;
+			font-size: 20px;
+			line-height: 23px;
+			padding: 0 10px
+		}
+	}
 	h3{
 		margin: 0 0 0;
 		padding: 10px;
