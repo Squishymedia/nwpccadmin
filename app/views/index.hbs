@@ -36,14 +36,19 @@
             <li class="list-group-item">
               Total revisions <span class="badge">{{this.revisions}}</span>
             </li>
-            <a data-toggle="modal" class="postnew list-group-item" data-sid="{{this.id}}" href="#" data-target="#modal-{{this.id}}">
-              Upload a new revision
-            </a>
+          </ul>
+          <ul class="list-group">
+              <a data-toggle="modal" class="postnew list-group-item" data-sid="{{this.id}}" href="#" data-target="#modal-{{this.id}}">
+                Upload a new revision
+              </a>
+          </ul>
+          <ul class="list-group">
              <!--  <a class="postnew" data-sid="{{this.id}}" href="#">Upload a new revision</a> -->
             <a class="load list-group-item" data-sid="{{this.id}}" href="#">
               View history
             </a>
           </ul>
+          <hr>
         </div>
       {{/each}}
       <!-- </div> -->

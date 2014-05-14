@@ -2,7 +2,7 @@
 @import "bootstrap.less";
 
 a{
-		.transition(all 0.3s ease); 
+		.transition(all 0.2s ease); 
 }
 
 .container{
@@ -69,13 +69,13 @@ a{
 }
 
 a.list-group-item{
-	background: @brand-primary;
-	color: #fff;
+	background:lighten(@gray-lighter, 5%);
+	color:  @brand-primary;
 	font-weight: bold;
 	text-align: center;
 		&:hover{
-		background:lighten(@brand-primary, 30%);
-		color:  @brand-primary;
+		background: @brand-primary;
+		color: #fff;
 	}
 }
 
