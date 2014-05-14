@@ -1,9 +1,14 @@
 
 @import "bootstrap.less";
 
+a{
+		.transition(all 0.3s ease); 
+}
+
 .container{
-	margin: 20px 0;
-	width: 100%
+	margin: 20px auto;
+	width: 100%;
+	max-width:2000px;
 }
 
 .affix-top{
@@ -63,12 +68,12 @@
 }
 
 a.list-group-item{
-	color: @brand-primary;
-	background:#E4DEE4;
+	background: @brand-primary;
+	color: #fff;
 	font-weight: bold;
-	&:hover{
-		background: @brand-primary;
-		color: #fff;
+		&:hover{
+		background:lighten(@brand-primary, 30%);
+		color:  @brand-primary;
 	}
 }
 
