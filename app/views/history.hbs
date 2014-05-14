@@ -4,7 +4,7 @@
   {{#each data.revisions}}
   {{debug this}}
     <div id="rev{{this.id}}" data-vid="{{this.id}}" class="revision {{#if this.current}}current{{/if}}">
-      <em>{{this.user}} | {{this.created}}</em>
+      <strong>{{this.user}} | {{this.created}}</strong>
       <p>{{this.comment}}</p>
       <a href="#" class="approve" data-sid="{{../data.id}}">mark as current version</a>
     </div>

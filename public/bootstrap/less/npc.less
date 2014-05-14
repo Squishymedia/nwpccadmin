@@ -29,7 +29,7 @@
 			a.approve {
 			    display:none;
 			}
-			em:after{
+			strong:after{
 				content: 'active';
 				color: @brand-primary;
 				margin: 0 0 0 10px;
@@ -132,9 +132,13 @@ a.list-group-item{
 }
 
 
-#revisions h3{
-	margin: 0 0 0;
-	padding: 10px;
-	color: @brand-primary;
-	background: @gray-lighter;
+#revisions {
+	border: 1px solid #DDD;
+	border-radius: 4px;
+	h3{
+		margin: 0 0 0;
+		padding: 10px;
+		color: @brand-primary;
+		background: @gray-lighter;
+	}
 }
