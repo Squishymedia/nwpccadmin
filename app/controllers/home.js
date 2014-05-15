@@ -30,6 +30,11 @@ exports.show = function(req, res){
   
   var sets = JSON.parse(body);
   
+  
+  _.each(sets, function(s){
+    s.created = moment(s.created).format('MMMM Do h:mm a');
+  });
+  
   console.log(sets);
   
     res.render('index', {'sets': sets, 'global': {'service': global.conf.dataService}});

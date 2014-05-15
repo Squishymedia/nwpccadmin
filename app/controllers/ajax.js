@@ -19,7 +19,7 @@ exports.history = function(req, res){
       if (a.id == results.current_revision) {
         a.current = true;
       }
-      a.created = moment(a.created).format('h:mm a MMMM Do YY');
+      a.created = moment(a.created).format('MMMM Do h:mm a');
       
     });
     
